@@ -1,0 +1,36 @@
+# Build artifacts
+build/
+bin/
+lib/
+*.so
+*.a
+*.o
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+.python-version
+
+# IDEs and Editors
+.vscode/
+.idea/
+.cache/
+.clangd/
+compile_commands.json
+
+# Documentation output
+html/
+latex/
+
+# Data
+# We ignore the actual CSV data if it's large, but keep the generation script
+data/*.csv
+!data/generate_data.py
+
+# Doxygen
+Doxyfile.bak
