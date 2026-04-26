@@ -37,7 +37,7 @@ def generate_synthetic_data(num_bars=10000, base_price=100.0):
     # {"timestamp", "open", "high", "low", "close", "volume", "forecast"}
     df = df[["timestamp", "open", "high", "low", "close", "volume", "forecast"]]
     
-    df.to_csv("synthetic_data.csv", index=False)
+    df.to_csv("data/synthetic_data.csv", index=False)
     print(f"Saved {num_bars} rows to synthetic_data.csv")
 
 if __name__ == "__main__":

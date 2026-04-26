@@ -76,9 +76,17 @@ cmake -B build -DCMAKE_PREFIX_PATH=$CONDA_PREFIX
 cmake --build build
 ```
 
+### 2*. Test Env
+Before running the agent there is an oportunity to run the test script implemented in C++,
+do not forget to generate data first:
+```
+python data/generate_data.py
+./build/trading_test data/synthetic_data.csv
+```
+
 ### 3. Train
 Generate synthetic data and start training the agent:
 ```bash
-python generate_data.py
+python data/generate_data.py
 python train_agent.py
 ```
