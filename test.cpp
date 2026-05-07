@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
 
         std::cout << std::format("{:<6} {:>12} {:>12} {:>4} {:>4} {:>12} {:>12} {:>12} {:>10}\n",
             "Step", "LogReturn", "SMA", "Pos", "Act", "Reward", "Equity", "Forecast", "Remain");
-        std::cout << std::string(105, '-') << "\n";
+        std::cout << std::string(93, '-') << "\n";
 
         int trades = 0;
         int steps_shown = 0;
@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 
             total_reward += result.reward;
 
-            if (steps_shown < 20) {
+            if (steps_shown < 100) {
                 std::cout << std::format("{:<6} {:>12.6f} {:>12.6f} {:>4} {:>4} {:>12.6f} {:>12.2f} {:>12.6f} {:>10}\n",
                     env.current_step(), obs.last_log_return, obs.short_window_mean_return,
                     obs.current_position, action, result.reward, env.portfolio().equity(),

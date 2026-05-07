@@ -2,6 +2,7 @@
 #include <format>
 
 #include "Exceptions.h"
+#include "ExecutionModel.h"
 #include "TradingEnv.h"
 
 TradingEnv::TradingEnv(
@@ -15,7 +16,7 @@ TradingEnv::TradingEnv(
       portfolio_(config.initial_cash),
       initial_cash_(config.initial_cash),
       start_index_(config.start_index),
-      end_index_(config.end_index == 0 ? data_->size() : config.end_index) {
+      end_index_(config.end_index == DEFAULT_END_INDEX ? data_->size() : config.end_index) {
     // Check the validity of the environment's params
     if (!data_ || data_->size() == 0) {
         throw ConfigError(EXCEPTION_DATA_NULL_EMPTY);
@@ -49,7 +50,7 @@ Observation TradingEnv::reset() {
 }
 
 StepResult TradingEnv::step(int action) {
-    if (action < -1 || action > 1) {
+    if (action < OPEN_SHORT || action > OPEN_LONG) {
         throw ConfigError(std::format(EXCEPTION_INVALID_ACTION, action));
     }
 
