@@ -1,0 +1,1 @@
+workers=5 cores=20 pilot_peak_rss_mb=674.5 available_mb_at_start=6489 timesteps=300000
