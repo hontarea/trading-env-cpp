@@ -1,20 +1,19 @@
 name: trading_env
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.12
-  - cmake
-  - pybind11
-  - gcc_linux-64
-  - gxx_linux-64
+  - cmake>=3.20
+  - pybind11>=2.12
+  - gcc_linux-64>=13   # std::format needs GCC 13+
+  - gxx_linux-64>=13
   - make
-  - doxygen
   - numpy
   - pandas
   - matplotlib
   - gymnasium
+  - pytest
+  - scikit-build-core
   - pip
   - pip:
     - stable-baselines3
-    - shimmy

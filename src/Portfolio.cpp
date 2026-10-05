@@ -3,34 +3,17 @@
 Portfolio::Portfolio(double initial_cash)
     : cash_(initial_cash), equity_(initial_cash) {}
 
-void Portfolio::apply_fill(int new_position, double fill_price, double transaction_cost_log) {
-    int delta = new_position - position_;
-    if (delta == 0) {
-        return;
-    }
-    if (delta > 0) {
-        const double required_cash =
-            static_cast<double>(delta) * fill_price + transaction_cost_log;
-        if (cash_ < required_cash) {
-            return;
-        }
-    }
-    cash_ -= static_cast<double>(delta) * fill_price;
-    cash_ -= transaction_cost_log;
-    position_ = new_position;
-    entry_price_ = (new_position != 0) ? fill_price : 0.0;
+void Portfolio::apply_fill(double units_delta, double fill_price, double commission) {
+    cash_ -= units_delta * fill_price;
+    cash_ -= commission;
+    units_ += units_delta;
 }
 
-void Portfolio::update_equity(double current_price) {
-    equity_ = cash_ + static_cast<double>(position_) * current_price;
+void Portfolio::mark_to_market(double price) {
+    mark_price_ = price;
+    equity_ = cash_ + units_ * price;
 }
 
-void Portfolio::step_forward() {
-    ++step_index_;
+double Portfolio::exposure() const {
+    return equity_ > 0.0 ? units_ * mark_price_ / equity_ : 0.0;
 }
-
-int Portfolio::position() const { return position_; }
-double Portfolio::cash() const { return cash_; }
-double Portfolio::equity() const { return equity_; }
-double Portfolio::entry_price() const { return entry_price_; }
-std::size_t Portfolio::step_index() const { return step_index_; }

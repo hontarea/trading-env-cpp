@@ -1,7 +1,8 @@
 # Build artifacts
 build/
-bin/
-lib/
+_skbuild/
+dist/
+*.egg-info/
 *.so
 *.a
 *.o
@@ -9,12 +10,9 @@ lib/
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-.env
-.venv
-env/
+.pytest_cache/
+.venv/
 venv/
-.python-version
 
 # IDEs and Editors
 .vscode/
@@ -23,14 +21,13 @@ venv/
 .clangd/
 compile_commands.json
 
-# Documentation output
+# Generated data (recreate with data/generate_data.py)
+data/*.csv
+
+# Experiment by-products (results/*.csv, *.png and summary.md are committed)
+experiments/results/models/
+experiments/results/monitor/
+
+# Local Doxygen output
 html/
 latex/
-
-# Data
-# We ignore the actual CSV data if it's large, but keep the generation script
-data/*.csv
-!data/generate_data.py
-
-# Doxygen
-Doxyfile.bak

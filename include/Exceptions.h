@@ -1,7 +1,6 @@
 #ifndef EXCEPTIONS_H
 #define EXCEPTIONS_H
 
-
 #include <stdexcept>
 
 /// @file Exceptions.h
@@ -13,7 +12,7 @@ class MarketSimError : public std::runtime_error {
     using std::runtime_error::runtime_error;
 };
 
-/// @brief Error during data loading.
+/// @brief Error during data loading or data validation.
 /// Differentiates IO/parsing errors from other types.
 class DataLoadError : public MarketSimError {
     using MarketSimError::MarketSimError;
@@ -25,5 +24,15 @@ class ConfigError : public MarketSimError {
     using MarketSimError::MarketSimError;
 };
 
-#endif 
- 
+/// @brief An action outside the valid action space was passed to the environment.
+class InvalidActionError : public MarketSimError {
+    using MarketSimError::MarketSimError;
+};
+
+/// @brief The environment was stepped without an active episode
+/// (before reset() or after the episode ended).
+class EpisodeError : public MarketSimError {
+    using MarketSimError::MarketSimError;
+};
+
+#endif
