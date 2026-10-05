@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cpp:
+    name: C++ build and tests (GCC 13)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pybind11
+        run: python -m pip install "pybind11>=2.12"
+      - name: Configure
+        run: >
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_CXX_COMPILER=g++-13
+          -Dpybind11_DIR="$(python -m pybind11 --cmakedir)"
+      - name: Build
+        run: cmake --build build -j
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+      - name: Smoke example
+        run: |
+          python -m pip install numpy
+          python data/generate_data.py --n-bars 2000 --out data/ci.csv
+          ./build/smoke_test data/ci.csv
+
+  python:
+    name: Python package and tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build and install
+        env:
+          CXX: g++-13
+        run: python -m pip install ".[test]"
+      - name: Test
+        run: python -m pytest -v
