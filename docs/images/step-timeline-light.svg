@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 312" width="1000" height="312" role="img" aria-labelledby="title desc">
+<title id="title">Step timeline of the trading environment</title>
+<desc id="desc">Three bars t, t+1 and t+2. At step t the agent sees bar t and earlier bars (green); bars t+1 and t+2 are hidden (red, hatched). Marker 1 is at the close of bar t, marker 2 at the open of bar t+1, marker 3 at the close of bar t+1. Below the axis, row 4 shows the position periods (a t-1 from open t to open t+1, a t from open t+1 to open t+2) and row 5 the reward period r t (close t to close t+1).</desc>
+<style>text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2328}.t1{font-size:15px;font-weight:700}.t2{font-size:13.5px;fill:#4b5059}.lbl{font-size:16px}.bar{font-size:14px;font-weight:700}.tick{font-size:13.5px;fill:#4b5059}.mi{font-family:"STIX Two Text","Latin Modern Roman","Cambria Math","Times New Roman",Times,"Noto Serif",serif;font-style:italic;font-weight:400}.mn{font-family:"STIX Two Text","Latin Modern Roman","Cambria Math","Times New Roman",Times,"Noto Serif",serif;font-style:normal;font-weight:400}</style>
+<defs>
+<pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#fa4549" stroke-width="2.5" stroke-opacity="0.45"/></pattern>
+</defs>
+<rect x="16" y="116" width="282" height="68" rx="6" fill="#116329" fill-opacity="0.10"/>
+<rect x="298" y="116" width="668" height="68" fill="#fa4549" fill-opacity="0.07"/>
+<rect x="298" y="116" width="668" height="68" fill="url(#hatch)" fill-opacity="0.35"/>
+<rect x="24" y="90" width="14" height="14" rx="2" fill="#116329"/>
+<text x="46" y="102" text-anchor="start" class="t2"><tspan>visible at step </tspan><tspan class="mi" font-size="14.9">t</tspan></text>
+<rect x="690" y="90" width="14" height="14" rx="2" fill="url(#hatch)" stroke="#fa4549" stroke-width="2" stroke-dasharray="4 2"/>
+<text x="712" y="102" text-anchor="start" class="t2"><tspan>hidden at step </tspan><tspan class="mi" font-size="14.9">t</tspan><tspan> (future)</tspan></text>
+<line x1="16" y1="150" x2="966" y2="150" stroke="#59636e" stroke-width="3"/>
+<path d="M964 143 L976 150 L964 157 Z" fill="#59636e"/>
+<text x="990" y="190" text-anchor="end" class="tick"><tspan>time</tspan></text>
+<rect x="48" y="133" width="250" height="34" rx="5" fill="#ffffff"/>
+<rect x="48" y="133" width="250" height="34" rx="5" fill="#116329" fill-opacity="0.22" stroke="#116329" stroke-width="3"/>
+<text x="173.0" y="156" text-anchor="middle" class="bar"><tspan>bar </tspan><tspan class="mi" font-size="15.4">t</tspan></text>
+<text x="48" y="190" text-anchor="middle" class="tick"><tspan>open</tspan><tspan class="mi" dy="4.6" font-size="11.1">t</tspan></text>
+<text x="298" y="190" text-anchor="middle" class="tick"><tspan>close</tspan><tspan class="mi" dy="4.6" font-size="11.1">t</tspan></text>
+<rect x="362" y="133" width="250" height="34" rx="5" fill="#ffffff"/>
+<rect x="362" y="133" width="250" height="34" rx="5" fill="#fa4549" fill-opacity="0.22" stroke="#fa4549" stroke-width="3" stroke-dasharray="10 6"/>
+<text x="487.0" y="156" text-anchor="middle" class="bar"><tspan>bar </tspan><tspan class="mi" font-size="15.4">t</tspan><tspan class="mn" font-size="15.4">+</tspan><tspan class="mn" font-size="15.4">1</tspan></text>
+<text x="362" y="190" text-anchor="middle" class="tick"><tspan>open</tspan><tspan class="mi" dy="4.6" font-size="11.1">t</tspan><tspan class="mn" font-size="11.1">+</tspan><tspan class="mn" font-size="11.1">1</tspan></text>
+<text x="612" y="190" text-anchor="middle" class="tick"><tspan>close</tspan><tspan class="mi" dy="4.6" font-size="11.1">t</tspan><tspan class="mn" font-size="11.1">+</tspan><tspan class="mn" font-size="11.1">1</tspan></text>
+<rect x="676" y="133" width="250" height="34" rx="5" fill="#ffffff"/>
+<rect x="676" y="133" width="250" height="34" rx="5" fill="#fa4549" fill-opacity="0.22" stroke="#fa4549" stroke-width="3" stroke-dasharray="10 6"/>
+<text x="801.0" y="156" text-anchor="middle" class="bar"><tspan>bar </tspan><tspan class="mi" font-size="15.4">t</tspan><tspan class="mn" font-size="15.4">+</tspan><tspan class="mn" font-size="15.4">2</tspan></text>
+<text x="676" y="190" text-anchor="middle" class="tick"><tspan>open</tspan><tspan class="mi" dy="4.6" font-size="11.1">t</tspan><tspan class="mn" font-size="11.1">+</tspan><tspan class="mn" font-size="11.1">2</tspan></text>
+<text x="926" y="190" text-anchor="middle" class="tick"><tspan>close</tspan><tspan class="mi" dy="4.6" font-size="11.1">t</tspan><tspan class="mn" font-size="11.1">+</tspan><tspan class="mn" font-size="11.1">2</tspan></text>
+<line x1="298" y1="40" x2="298" y2="140" stroke="#1f2328" stroke-width="2.5"/>
+<circle cx="298" cy="150" r="9" fill="#1f2328" stroke="#ffffff" stroke-width="3"/>
+<circle cx="298" cy="28" r="12" fill="#1f2328"/>
+<text x="298" y="33" text-anchor="middle" class="t1" style="font-size:13.5px;fill:#ffffff">1</text>
+<text x="278" y="33.5" text-anchor="end" class="t1">Observe</text>
+<line x1="362" y1="40" x2="362" y2="140" stroke="#1f2328" stroke-width="2.5"/>
+<circle cx="362" cy="150" r="9" fill="#1f2328" stroke="#ffffff" stroke-width="3"/>
+<circle cx="362" cy="28" r="12" fill="#1f2328"/>
+<text x="362" y="33" text-anchor="middle" class="t1" style="font-size:13.5px;fill:#ffffff">2</text>
+<text x="382" y="33.5" text-anchor="start" class="t1">Execute</text>
+<line x1="612" y1="40" x2="612" y2="140" stroke="#1f2328" stroke-width="2.5"/>
+<circle cx="612" cy="150" r="9" fill="#1f2328" stroke="#ffffff" stroke-width="3"/>
+<circle cx="612" cy="28" r="12" fill="#1f2328"/>
+<text x="612" y="33" text-anchor="middle" class="t1" style="font-size:13.5px;fill:#ffffff">3</text>
+<text x="632" y="33.5" text-anchor="start" class="t1">Mark</text>
+<line x1="48" y1="200" x2="48" y2="238" stroke="#59636e" stroke-width="1.5" stroke-dasharray="3 4"/>
+<line x1="362" y1="200" x2="362" y2="238" stroke="#59636e" stroke-width="1.5" stroke-dasharray="3 4"/>
+<line x1="676" y1="200" x2="676" y2="238" stroke="#59636e" stroke-width="1.5" stroke-dasharray="3 4"/>
+<line x1="298" y1="200" x2="298" y2="286" stroke="#59636e" stroke-width="1.5" stroke-dasharray="3 4"/>
+<line x1="612" y1="200" x2="612" y2="286" stroke="#59636e" stroke-width="1.5" stroke-dasharray="3 4"/>
+<path d="M48 228 V238 H358 V228" fill="none" stroke="#1f2328" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="203.0" y="230" text-anchor="middle" class="lbl"><tspan class="mi" font-size="17.6">a</tspan><tspan class="mi" dy="5.4" font-size="13.1">t</tspan><tspan class="mn" font-size="13.1">−</tspan><tspan class="mn" font-size="13.1">1</tspan></text>
+<path d="M366 228 V238 H676 V228" fill="none" stroke="#1f2328" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="521.0" y="230" text-anchor="middle" class="lbl"><tspan class="mi" font-size="17.6">a</tspan><tspan class="mi" dy="5.4" font-size="13.1">t</tspan></text>
+<path d="M298 276 V286 H612 V276" fill="none" stroke="#1f2328" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="455.0" y="278" text-anchor="middle" class="lbl"><tspan class="mi" font-size="17.6">r</tspan><tspan class="mi" dy="5.4" font-size="13.1">t</tspan></text>
+<circle cx="706" cy="233" r="12" fill="#1f2328"/>
+<text x="706" y="238" text-anchor="middle" class="t1" style="font-size:13.5px;fill:#ffffff">4</text>
+<text x="726" y="238.5" class="t1">Position</text>
+<circle cx="642" cy="281" r="12" fill="#1f2328"/>
+<text x="642" y="286" text-anchor="middle" class="t1" style="font-size:13.5px;fill:#ffffff">5</text>
+<text x="662" y="286.5" class="t1">Reward</text>
+</svg>
